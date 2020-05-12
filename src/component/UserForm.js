@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import FormUserDetails from "./FormUserDetails"
 import FormPersonal from "./FormPersonal"
 import Confirm from "./Confirm"
-
+import Success from "./Success"
 export class UserForm extends Component{
     state = {
         step: 1,
@@ -66,7 +66,7 @@ export class UserForm extends Component{
                 )
             case 4:
                 return (
-                    <h1>Success</h1>
+                    <Success/>
                 )
 
         }
