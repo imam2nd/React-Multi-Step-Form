@@ -14,7 +14,7 @@ export class UserForm extends Component{
 
     // function for next step
     nextStep = () => {
-        const {step} = this.step;
+        const {step} = this.state;
         this.setState({
             step: step+1
         });
@@ -22,7 +22,7 @@ export class UserForm extends Component{
 
     // function for prev step
     prevStep = () => {
-        const {step} = this.step;
+        const {step} = this.state;
         this.setState({
             step: step-1
         });

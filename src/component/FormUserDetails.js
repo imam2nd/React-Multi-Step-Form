@@ -10,15 +10,46 @@ class FormUserDetails extends Component{
         this.props.nextStep();
     }
     render() {
-        const {value} = this.props;
+        const {value, handleChange} = this.props;
         return (
             <MuiThemeProvider>
                 <React.Fragment>
                     <AppBar title="This is User Details Form"/>
+                    <TextField
+                        hintText="Enter Your First Name"
+                        floatingLabelFixed="First Name"
+                        onChange={handleChange('firstName')}
+                        defaultValue={value.firstName}
+                    />
+                    <br/>
+                    <TextField
+                        hintText="Enter Your Last Name"
+                        floatingLabelFixed="Last Name"
+                        onChange={handleChange('lastName')}
+                        defaultValue={value.lastName}
+                    />
+                    <br/>
+                    <TextField
+                        hintText="Enter Your Email"
+                        floatingLabelFixed="Email"
+                        onChange={handleChange('email')}
+                        defaultValue={value.email}
+                    />
+                    <br/>
+                    <RaisedButton
+                        label="Continue"
+                        primary={true}
+                        style={styles.button}
+                        onClick={this.continue}
+                    />
                 </React.Fragment>
             </MuiThemeProvider>
         );
     }
 }
-
+const styles = {
+    button: {
+        margin: 15
+    }
+}
 export default FormUserDetails
